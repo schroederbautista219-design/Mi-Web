@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BautistaSch | Portafolio de Mods</title>
+    <style>
+        /* Reseteo básico y tipografía profesional */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            /* 1. EFECTO DE FONDO DIFUMINADO: 
+               Usamos un fondo de repuesto oscuro y tu imagen fondo.jpg.
+               La magia ocurre con el backdrop-filter en la ventana central.
+            */
+            background-color: #0d0d0d;
+            background-image: url('fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Mantiene el fondo quieto al hacer scroll */
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* 2. LA VENTANA CENTRAL (Caja de contenido) */
+        .glass-window {
+            /* Diseño semitransparente con efecto de 'vidrio' */
+            background: rgba(15, 15, 15, 0.85); 
+            backdrop-filter: blur(8px); /* ESTO DIFUMINA EL FONDO.JPG POR DETRÁS */
+            -webkit-backdrop-filter: blur(8px); /* Soporte para Safari */
+            
+            max-width: 650px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1); /* Borde suave */
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6); /* Sombra elegante */
+            text-align: center;
+        }
+
+        /* 3. TÍTULO Y TEXTO */
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #00d4ff; /* Azul cyan eléctrico para destacar */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .intro {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        /* 4. LISTA DE MODS (Cada uno es un botón) */
+        .mods-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* Estilo base para cada 'botón' de mod */
+        .mod-item {
+            display: block; /* Ocupa todo el ancho */
+            text-decoration: none; /* Quita el subrayado */
+            background: rgba(255,255,255,0.05); /* Fondo muy sutil */
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #00d4ff; /* Línea distintiva cyan */
+            text-align: left;
+            transition: all 0.3s ease; /* Animación suave */
+        }
+
+        /* Efecto al pasar el ratón */
+        .mod-item:hover {
+            background: rgba(0, 212, 255, 0.15); /* Fondo cyan suave */
+            transform: translateX(8px); /* Se mueve ligeramente a la derecha */
+        }
+
+        .mod-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .mod-status {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+        }
+
+        /* 5. ENLACES DE REDES (Abajo) */
+        .social-section {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 25px;
+        }
+
+        .social-intro {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-link {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .social-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* 6. PANTALLA DE ERROR 404 (Oculta por defecto) */
+        #status-msg {
+            display: none; /* Oculto */
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #721c24; /* Rojo error */
+            color: #f8d7da;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid #f5c6cb;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="status-msg">404: Mod no encontrado o aún no disponible</div>
+
+    <div class="glass-window">
+        <h1>Hola me llamo bauti y soy un creador de mods.</h1>
+        <p class="intro">
+            Hola como ya viste Soy bauti un Creador de cosas Sabes youtube, mods de minecraft etc. y aqui tienes un resumen de todos mis proyectos Y ya que estas aqui te lo agradesco...
+        </p>
+
+        <div class="mods-container">
+            <a href="http://www.modrinth.com/mod/dimensional-mixer" target="_blank" class="mod-item">
+                <span class="mod-name">Dimensional Mixer</span>
+                <span class="mod-status">Mezcla todas las dimensiones (Público)</span>
+            </a>
+
+            <a href="?mod=2072" class="mod-item">
+                <span class="mod-name">2072</span>
+                <span class="mod-status">Un mod de altura para minecraft (Idea pendiente)</span>
+            </a>
+
+            <a href="?mod=truealpha" class="mod-item">
+                <span class="mod-name">The True Alpha</span>
+                <span class="mod-status">Un modpack de minecraft... (Aun no publico)</span>
+            </a>
+
+            <a href="?mod=glitched" class="mod-item">
+                <span class="mod-name">The Glitched True</span>
+                <span class="mod-status">Un modpack de verdadero terror (Cancelado)</span>
+            </a>
+
+            <a href="?mod=biome" class="mod-item">
+                <span class="mod-name">Biome Mixer</span>
+                <span class="mod-status">Mezcla todos los biomas (Aun no publico)</span>
+            </a>
+        </div>
+
+      <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 15px;">En internet Archive soy un coleccionista de discos.</p>
+            
+            <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 25px;">
+                <a href="http://www.youtube.com/@bautigame-oficial" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: bold;">YouTube</a>
+                <a href="http://www.archive.org/details/@bautista_schroeder" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: bold;">Internet Archive</a>
+            </div>
+
+            <div style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 15px; font-size: 0.75rem; color: #666; letter-spacing: 1px; text-align: center;">
+                © 2026 BautistaSch — All Rights Reserved<br>
+                Todos los derechos reservados.
+            </div>
+        </div>
+    </div> </body>
+</html>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lógica para mostrar el mensaje 404 si se hace clic en un mod no listo
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('mod')) {
+            const msg = document.getElementById('status-msg');
+            msg.style.display = 'block';
+            
+            // Oculta el mensaje automáticamente después de 4 segundos
+            setTimeout(() => {
+                msg.style.display = 'none';
+                // Limpia la URL sin recargar para que no vuelva a aparecer el mensaje si actualizan
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
